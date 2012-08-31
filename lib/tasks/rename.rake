@@ -36,11 +36,9 @@ namespace :app do
 
     update_files(camelcase_files, current_name, new_name)
         
-    underscore_files = [ 'rvmrc.template', 'config/initializers/session_store.rb']
+    underscore_files = [ 'config/initializers/session_store.rb']
 
     update_files(underscore_files, current_name.underscore, new_name.underscore)
-
-    File.rename('rvmrc.template', '.rvmrc')
 
     puts 'Done.'
 
