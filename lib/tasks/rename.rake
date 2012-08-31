@@ -15,9 +15,10 @@ namespace :app do
   desc "Renames the application"
   task :rename, [:app_name] do |t, args|
     args.with_defaults(app_name: 'my_app_template') 
-    # Get the current name of the app
-    new_name = args.app_name
-    current_name = IO.readlines('config/routes.rb').first.split('::')[0]
+
+    new_name = args.app_name.camelize
+    #current_name = IO.readlines('config/routes.rb').first.split('::')[0]
+    current_name = "MyAppTemplate"
 
     puts "Renaming #{current_name} to #{new_name}"
 
