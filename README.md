@@ -10,7 +10,7 @@ Suppose I want to create a new rails app called 'KillerApp'
 
 1. Clone the repo to the *killer_app* folder:
 ```shell
-git clone ssh://git@github.com/ordoghl/my_app_template.git
+git clone ssh://git@github.com/ordoghl/my_app_template.git killer_app
 ```
 
 2. Create killer_app rvm gemset and rvmrc:
