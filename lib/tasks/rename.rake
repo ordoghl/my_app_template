@@ -1,4 +1,4 @@
-def rename_files(files, from, to)
+def update_files(files, from, to)
   files.each do |file|
     puts "  Updating #{file}"
     
@@ -34,11 +34,15 @@ namespace :app do
               'config/initializers/secret_token.rb',
               'config/initializers/session_store.rb' ]
 
-    rename_files(camelcase_files, current_name, new_name)
+    update_files(camelcase_files, current_name, new_name)
         
-    underscore_files = [ '.rvmrc', 'config/initializers/session_store.rb']
+    underscore_files = [ 'rvmrc.template', 'config/initializers/session_store.rb']
 
-    rename_files(underscore_files, current_name.underscore, new_name.underscore)
+    update_files(underscore_files, current_name.underscore, new_name.underscore)
+
+    File.rename('rvmrc.template', '.rvmrc')
+
+    puts 'Done.'
 
   end
 end
