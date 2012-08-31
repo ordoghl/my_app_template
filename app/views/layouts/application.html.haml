@@ -1,0 +1,33 @@
+!!! 5
+%html
+  %head
+    %title= "MyAppTemplate - #{yield :page_title}"
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    = yield :header
+  %body{class: "#{params[:controller].parameterize} #{params[:action]}"}
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar{ data: {toggle: 'collapse', target: '.nav-collapse'}}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to "MyAppTemplate", '#', class: 'brand pull-left'
+          .nav-collapse.collapse
+            <!-- "Navigation comes here" -->
+    .wrapper
+      .container
+        .proper-content
+          .row
+            .span12
+              .page-header
+                %h1
+                  = yield :page_title
+              #page-content
+                = yield
+      .push
+    %footer#footer
+      != "MyAppTemplate &copy; 2012"
+    = yield :javascript

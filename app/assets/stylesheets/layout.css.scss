@@ -1,0 +1,33 @@
+$footer-height: 50px;
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important; /* ie7 fix */
+  height: 100%;
+  margin: 0 auto -1*$footer-height;
+}
+
+.proper-content {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+.push {
+  height: $footer-height;
+}
+
+#footer {
+  position: relative;
+  color: #fff;
+  background-color: #000;
+  height: $footer-height;
+  text-align: center;
+  line-height: $footer-height;
+  @include gradient-vertical(#111, #333);
+  a, a:link, a:visited {
+    color: #ddd;
+  }
+}
