@@ -24,7 +24,6 @@ namespace :app do
     camelcase_files = [ 'app/views/layouts/application.html.haml',
               'Rakefile',
               'config.ru',
-              'rakefile',
               'config/application.rb',
               'config/environment.rb',
               'config/routes.rb',
