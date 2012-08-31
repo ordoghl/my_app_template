@@ -8,12 +8,20 @@ Usage
 
 Suppose I want to create a new rails app called 'KillerApp'
 
-1. Clone the repo to the *killer_app* folder:
+1. Download the master branch as a .tar.gz file
 ```shell
-git clone ssh://git@github.com/ordoghl/my_app_template.git killer_app
+curl -L https://github.com/ordoghl/my_app_template/tarball/master > my_app_template.tar.gz
 ```
 
-2. Update or remove git remote origin
+2. Extract it
+```shell
+tar xvzf my_app_template.tar.gz
+```
+
+3. Rename the extracted directory to *killer_app*
+```shell
+mv <extracted directory name> killer_app
+```
 
 3. Create killer_app rvm gemset and rvmrc:
 ```shell
